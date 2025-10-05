@@ -1,20 +1,20 @@
-FROM golang:1.24-alpine  AS build
-RUN apk add --no-cache git
+# Use Python 3.11 slim image
+FROM python:3.11-slim
 
-WORKDIR /src
-COPY go.mod go.sum ./
-RUN go mod download
-
-COPY . .
-# disable cgo, target linux, static link
-RUN CGO_ENABLED=0 GOOS=linux GOARCH=amd64 \
-    go build -ldflags="-s -w" -o server .
-
-FROM alpine:latest
-RUN apk add --no-cache ca-certificates
-
+# Set working directory
 WORKDIR /app
-COPY --from=build /src/server .
 
+# Copy requirements file
+COPY requirements.txt .
+
+# Install dependencies
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Copy application code
+COPY product_api.py .
+
+# Expose port 8080
 EXPOSE 8080
-ENTRYPOINT ["./server"]
+
+# Run the application
+CMD ["python", "product_api.py"]

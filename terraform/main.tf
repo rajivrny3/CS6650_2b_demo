@@ -8,7 +8,7 @@ module "network" {
 
 module "ecr" {
   source          = "./modules/ecr"
-  repository_name = var.ecr_repository_name
+  repository_name = product-api-repo
 }
 
 module "logging" {
@@ -24,9 +24,9 @@ data "aws_iam_role" "lab_role" {
 
 module "ecs" {
   source             = "./modules/ecs"
-  service_name       = var.service_name
+  service_name       = "product-api"
   image              = "${module.ecr.repository_url}:latest"
-  container_port     = var.container_port
+  container_port     = 8080
   subnet_ids         = module.network.subnet_ids
   security_group_ids = [module.network.security_group_id]
   execution_role_arn = data.aws_iam_role.lab_role.arn
