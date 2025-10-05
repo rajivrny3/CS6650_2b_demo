@@ -8,7 +8,7 @@ module "network" {
 
 module "ecr" {
   source          = "./modules/ecr"
-  repository_name = product-api-repo
+  repository_name = "product-api-repo"
 }
 
 module "logging" {
