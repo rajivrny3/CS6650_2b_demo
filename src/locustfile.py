@@ -7,7 +7,7 @@ class ProductUser(HttpUser):
     def get_products(self):
         self.client.get("/products")
 
-    @task(9)
+    @task(1)
     def create_product(self):
         self.client.post("/products", json={
             "name": "Test Product",
