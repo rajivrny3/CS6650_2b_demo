@@ -15,6 +15,6 @@ class ProductUser(HttpUser):
     def create_product(self):
         self.client.post("/products", json={
             "name": "Test Product",
-            "price": 9.99
+            "price": 9.99,
             "stock": 5
         })
