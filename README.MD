@@ -65,6 +65,15 @@ To see successful GET on the server, please navigate to src/Successful GET in AW
 To see successful POST on the server, please navigate to src/Successful post in AWS.png
 ```
 
+Where to find:
+```
+To locate server code please navigate to src/product_api.py
+
+To locate Docker File please naviagate to src/Dockerfile
+
+To locate the infrastructure please navigate to the terraform foler
+```
+
 ## Clean Up
 ```
 terraform destroy -auto-approve
