@@ -1,6 +1,6 @@
-from locust import HttpUser, task, between
+from locust import FastHttpUser, task, between
 
-class ProductUser(HttpUser):
+class ProductUser(FastHttpUser):
     wait_time = between(1, 3)
 
     @task(1)
