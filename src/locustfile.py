@@ -3,7 +3,7 @@ from locust import FastHttpUser, task, between
 class ProductUser(FastHttpUser):
     wait_time = between(1, 3)
 
-    @task(1)
+    @task(5)
     def get_products(self):
         self.client.get("/products")
 
