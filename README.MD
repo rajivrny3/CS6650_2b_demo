@@ -44,7 +44,16 @@ aws ec2 describe-network-interfaces \
 
 Send some requests:
 ```
-curl http://<PUBLIC-IP-ADDRESS>:8080/albums
+Health Check:
+curl http://<PUBLIC-IP-ADDRESS>:8080/products
+
+GET:
+# Shows all the products in the server
+curl GET http://<PUBLIC-IP-ADDRESS>:8080/products
+
+POST:
+# Writes a new prodcut into the server
+curl POST http://<PUBLIC-IP-ADDRESS>:8080/products
 ```
 
 ## Clean Up
