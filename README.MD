@@ -71,7 +71,7 @@ To locate server code please navigate to src/product_api.py
 
 To locate Docker File please naviagate to src/Dockerfile
 
-To locate the infrastructure please navigate to the terraform foler
+To locate the infrastructure please navigate to the terraform folder
 ```
 
 ## Clean Up
