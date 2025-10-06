@@ -56,6 +56,15 @@ POST:
 curl POST http://<PUBLIC-IP-ADDRESS>:8080/products
 ```
 
+Successful Output:
+```
+To see succcessful healthcheck please navigate to src/Successful curl in after connecting via AWS.png
+
+To see successful GET on the server, please navigate to src/Successful GET in AWS.png
+
+To see successful POST on the server, please navigate to src/Successful post in AWS.png
+```
+
 ## Clean Up
 ```
 terraform destroy -auto-approve
